@@ -81,12 +81,12 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc *.gz
 %attr(755,root,root) /usr/lib/libjsw.so.*.*
+%attr(755,root,root) /usr/lib/libjsw.so
 
 %files devel
 %defattr(644,root,root,755)
 /usr/include/*
 /usr/man/man*/*
-%attr(755,root,root) /usr/lib/libjsw.so
 
 %files -n jscalibrator
 %defattr(644,root,root,755)
