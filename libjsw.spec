@@ -5,13 +5,6 @@ Version:	1.4.0d
 Release:	2
 License:	Modyfied GPL
 Group:		Libraries
-Group(de):	Libraries
-Group(es):	Bibliotecas
-Group(fr):	Librairies
-Group(pl):	Biblioteki
-Group(pt_BR):	Bibliotecas
-Group(ru):	Библиотеки
-Group(uk):	Б╕бл╕отеки
 Source0:	ftp://fox.mit.edu/pub/xsw/%{name}%{version}.tgz
 Source1:	jscalibrator.desktop
 Source2:	jscalibrator.png
@@ -39,13 +32,6 @@ pliku .joystick w katalogu domowym u©ytkownika.
 Summary:	libjsw development package
 Summary(pl):	Pliki dla programistСw libjsw
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
 
 %description devel
@@ -55,8 +41,6 @@ libjsw development package
 Summary:	Joystick calibrator
 Summary(pl):	Kalibrator joysticka
 Group:		Applications/Games
-Group(de):	Applikationen/Spiele
-Group(pl):	Aplikacje/Gry
 Requires:	%{name} = %{version}
 
 %description -n jscalibrator
