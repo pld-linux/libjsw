@@ -11,6 +11,7 @@ Group(fr):	Librairies
 Group(pl):	Biblioteki
 Source0:	ftp://fox.mit.edu/pub/xsw/%{name}%{version}.tgz
 Source1:	jscalibrator.desktop
+Source2:	jscalibrator.png
 BuildRequires:	gtk+-devel
 BuildRequires:	gcc-c++
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -88,6 +89,7 @@ cd jscalibrator
 cd ..
 install -d $RPM_BUILD_ROOT%{_applnkdir}/Settings
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Settings
+install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 gzip -9nf README AUTHORS LICENSE
 
@@ -113,5 +115,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc LICENSE.gz
 %attr(755,root,root) %{_xbindir}/*
 %{_xmandir}/man*/*
-%{_pixmapsdir}/*
+%{_pixmapsdir}/*.png
 %{_applnkdir}/Settings/*
