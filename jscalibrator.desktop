@@ -5,3 +5,4 @@ Icon=jscalibrator.png
 Exec=jscalibrator
 Terminal=0
 Type=Application
+# vi: encoding=utf-8
