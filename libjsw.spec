@@ -6,6 +6,7 @@ Release:	1
 License:	GPL-like
 Group:		Libraries
 Source0:	ftp://wolfpack.twu.net/users/wolfpack/%{name}-%{version}.tar.bz2
+# Source0-md5:	eb690cbf6c3af26ae40ab354f037289f
 Source1:	jscalibrator.desktop
 Source2:	jscalibrator.png
 Patch0:		%{name}-intbool.patch
