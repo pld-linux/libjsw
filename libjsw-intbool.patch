@@ -1,0 +1,11 @@
+--- include/xsw_ctype.h~	Mon Nov  5 23:55:11 2001
++++ include/xsw_ctype.h	Sat Feb  1 15:51:17 2003
+@@ -6,7 +6,7 @@
+ 
+ #ifndef isblank
+ //extern bool isblank(char c);
+-extern bool isblank(int c);
++extern int isblank(int c);
+ #endif
+ 
+ #else

@@ -1,19 +1,18 @@
 Summary:	UNIX Joystick Wrapper Library and calibrator
 Summary(pl):	Biblioteka do obs³ugi joysticka pod UNIX-em
 Name:		libjsw
-Version:	1.4.0d
+Version:	1.5.0
 Release:	3
 License:	GPL-like
 Group:		Libraries
-Source0:	ftp://fox.mit.edu/pub/xsw/%{name}%{version}.tgz
+Source0:	ftp://wolfpack.twu.net/users/wolfpack/libjsw-1.5.0.tar.bz2
 Source1:	jscalibrator.desktop
 Source2:	jscalibrator.png
+Patch0:		%{name}-intbool.patch
+URL:		http://wolfpack.twu.net/libjsw/
 BuildRequires:	gtk+-devel
 BuildRequires:	gcc-c++
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_xbindir	/usr/X11R6/bin
-%define		_xmandir	/usr/X11R6/man
 
 %description
 The UNIX Joystick Driver Wrapper Library and Calibrator (aka libjsw)
@@ -50,17 +49,22 @@ Joystick calibrator for use with libjsw.
 Kalibrator joysticka do u¿ywania z libjsw.
 
 %prep
-%setup -qn %{name}%{version}
+%setup -q
+%patch0 -p0
 
 %build
 cd libjsw
-%{__make} CFLAGS="-shared %{rpmcflags}"
+%{__make} \
+	CFLAGS="-shared %{rpmcflags} -fomit-frame-pointer -funroll-loops -ffast-math"
 ln -sf libjsw.so.*.* libjsw.so
 cd ..
 
 cp -f include/jsw.h .
 cd jscalibrator
-%{__make} CFLAGS="`gtk-config --cflags` %{rpmcflags}" INC="-I.." LIB_DIR="-L../libjsw"
+%{__make} \
+	CFLAGS="`gtk-config --cflags` %{rpmcflags} -fomit-frame-pointer -funroll-loops -ffast-math" \
+	LIB_DIR="-L../libjsw" \
+	INC="-I.."
 cd ..
 
 %install
@@ -74,10 +78,13 @@ cd ..
 
 cd jscalibrator
 %{__make} install \
-	BIN_DIR="$RPM_BUILD_ROOT%{_xbindir}" \
+	BIN_DIR="$RPM_BUILD_ROOT%{_bindir}" \
 	ICONS_DIR="$RPM_BUILD_ROOT%{_pixmapsdir}" \
-	MAN_DIR="$RPM_BUILD_ROOT%{_xmandir}/man1"
+	MAN_DIR="$RPM_BUILD_ROOT%{_mandir}/man1" \
+	DATA_DIR="$RPM_BUILD_ROOT%{_datadir}/libjsw"
+
 cd ..
+
 install -d $RPM_BUILD_ROOT%{_applnkdir}/Settings
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Settings
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
@@ -101,7 +108,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n jscalibrator
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_xbindir}/*
-%{_xmandir}/man*/*
+%attr(755,root,root) %{_bindir}/*
+%{_datadir}/libjsw
+%{_mandir}/man*/*
 %{_pixmapsdir}/*.png
 %{_applnkdir}/Settings/*
