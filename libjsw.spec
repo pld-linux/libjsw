@@ -68,7 +68,7 @@ cd ..
 ln -sf include/jsw.h .
 %{__make} -C jscalibrator \
 	CFLAGS="`gtk-config --cflags` %{rpmcflags} %{!?debug:-fomit-frame-pointer} -funroll-loops -ffast-math" \
-	INC="-I.."
+	INC_DIRS="-I.."
 
 %install
 rm -rf $RPM_BUILD_ROOT
