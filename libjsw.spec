@@ -2,7 +2,7 @@ Summary:	UNIX Joystick Wrapper Library and calibrator
 Summary(pl):	Biblioteka do obs³ugi joysticka pod UNIX-em
 Name:		libjsw
 Version:	1.4.0d
-Release:	1
+Release:	2
 License:	Modyfied GPL
 Group:		Libraries
 Group(de):	Libraries
