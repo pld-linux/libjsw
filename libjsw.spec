@@ -2,8 +2,8 @@ Summary:	UNIX Joystick Wrapper Library and calibrator
 Summary(pl):	Biblioteka do obs³ugi joysticka pod UNIX-em
 Name:		libjsw
 Version:	1.4.0d
-Release:	2
-License:	Modyfied GPL
+Release:	3
+License:	GPL-like
 Group:		Libraries
 Source0:	ftp://fox.mit.edu/pub/xsw/%{name}%{version}.tgz
 Source1:	jscalibrator.desktop
@@ -92,7 +92,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc README AUTHORS LICENSE
 %attr(755,root,root) %{_libdir}/libjsw.so.*.*
 %attr(755,root,root) %{_libdir}/libjsw.so
 
@@ -103,7 +103,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n jscalibrator
 %defattr(644,root,root,755)
-%doc LICENSE.gz
 %attr(755,root,root) %{_xbindir}/*
 %{_xmandir}/man*/*
 %{_pixmapsdir}/*.png
