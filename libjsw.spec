@@ -15,7 +15,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_xbindir	/usr/X11R6/bin
 %define		_xmandir	/usr/X11R6/man
 
-%description 
+%description
 The UNIX Joystick Driver Wrapper Library and Calibrator (aka libjsw)
 provides the programmer with the assistance to easilly code
 applications that need to use the joystick driver and a convience to
@@ -58,7 +58,7 @@ cd libjsw
 ln -sf libjsw.so.*.* libjsw.so
 cd ..
 
-cp -f include/jsw.h . 
+cp -f include/jsw.h .
 cd jscalibrator
 %{__make} CFLAGS="`gtk-config --cflags` %{rpmcflags}" INC="-I.." LIB_DIR="-L../libjsw"
 cd ..
@@ -69,14 +69,14 @@ cd libjsw
 %{__make} install \
 	JSW_LIB_DIR="$RPM_BUILD_ROOT%{_libdir}" \
 	JSW_INC_DIR="$RPM_BUILD_ROOT%{_includedir}" \
-	JSW_MAN_DIR="$RPM_BUILD_ROOT%{_mandir}/man3" 
+	JSW_MAN_DIR="$RPM_BUILD_ROOT%{_mandir}/man3"
 cd ..
 
 cd jscalibrator
 %{__make} install \
 	BIN_DIR="$RPM_BUILD_ROOT%{_xbindir}" \
 	ICONS_DIR="$RPM_BUILD_ROOT%{_pixmapsdir}" \
-	MAN_DIR="$RPM_BUILD_ROOT%{_xmandir}/man1" 
+	MAN_DIR="$RPM_BUILD_ROOT%{_xmandir}/man1"
 cd ..
 install -d $RPM_BUILD_ROOT%{_applnkdir}/Settings
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Settings
