@@ -1,6 +1,8 @@
 [Desktop Entry]
 Name=Joystick Calibrator
+Name[pl]=Kalibrator joysticka
 Comment=Joystick Calibrator
+Comment[pl]=Kalibrator joysticka
 Icon=jscalibrator.png
 Exec=jscalibrator
 Terminal=0
