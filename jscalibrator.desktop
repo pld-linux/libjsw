@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Joystick Calibrator
+Comment=Joystick Calibrator
+Exec=jscalibrator
+Terminal=0
+Type=Application
+Icon=jscalibrator.xpm
