@@ -1,5 +1,5 @@
---- libjsw-1.5.2/jscalibrator/Makefile.orig	Tue Nov  6 00:55:10 2001
-+++ libjsw-1.5.2/jscalibrator/Makefile	Sat Feb  1 22:37:20 2003
+--- libjsw-1.5.4/jscalibrator/Makefile.orig	2004-04-18 01:34:03.000000000 +0200
++++ libjsw-1.5.4/jscalibrator/Makefile	2004-04-20 00:44:18.074468720 +0200
 @@ -85,7 +85,7 @@
  #   Each argument is of the format -L<dir> where <dir> is the full
  #   path to the directory.
@@ -9,23 +9,23 @@
  
  # Header File Directories:
  #
-@@ -121,7 +121,7 @@
+@@ -131,7 +131,7 @@
  
  modules: $(OBJ_C) $(OBJ_CPP)
- 	@echo "Linking modules..."
+ 	@echo  -n "Linking modules..."
 -	@$(CPP) $(OBJ_C) $(OBJ_CPP) -o $(BIN) $(LIBS) $(LIB_DIRS)
 +	@$(CPP) $(OBJ_C) $(OBJ_CPP) -o $(BIN) $(LIB_DIRS) $(LIBS)
+ 	@echo -n "   "
+ 	@-$(LS) $(LSFLAGS) $(BIN)
  
- prebuild:
- 	@echo "Building program \"$(BIN)\"..."
---- libjsw-1.5.2/libjsw/Makefile.orig	Tue Nov  6 00:55:10 2001
-+++ libjsw-1.5.2/libjsw/Makefile	Sat Feb  1 22:39:52 2003
-@@ -87,7 +87,7 @@
+--- libjsw-1.5.4/libjsw/Makefile.orig	2004-04-18 01:34:03.000000000 +0200
++++ libjsw-1.5.4/libjsw/Makefile	2004-04-20 00:44:51.850334008 +0200
+@@ -97,7 +97,7 @@
  
  modules: $(OBJ_C) $(OBJ_CPP)
- 	@echo "Linking modules..."
+ 	@echo  -n "Linking modules..."
 -	@$(CPP) $(OBJ_C) $(OBJ_CPP) -o $(LIB) $(LIBS) $(LIB_DIRS)
 +	@$(CPP) $(OBJ_C) $(OBJ_CPP) -o $(LIB) $(LIB_DIRS) $(LIBS) -Wl,-soname=$(LIBPFX).so.1.5
+ 	@echo -n "   "
+ 	@-$(LS) $(LSFLAGS) $(LIB)
  
- prebuild:
- 	@echo "Building library \"$(LIB)\"..."
