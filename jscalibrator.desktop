@@ -5,6 +5,6 @@ Comment=Joystick Calibrator
 Comment[pl]=Kalibrator joysticka
 Icon=jscalibrator.png
 Exec=jscalibrator
-Terminal=0
+Terminal=false
 Type=Application
 # vi: encoding=utf-8
