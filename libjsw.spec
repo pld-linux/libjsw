@@ -44,7 +44,7 @@ Pliki dla programistów u¿ywaj±cych libjsw.
 %package -n jscalibrator
 Summary:	Joystick calibrator
 Summary(pl):	Kalibrator joysticka
-Group:		Applications/Games
+Group:		X11/Applications/Games
 Requires:	%{name} = %{version}
 
 %description -n jscalibrator
