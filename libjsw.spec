@@ -82,8 +82,6 @@ install -d $RPM_BUILD_ROOT%{_applnkdir}/Settings
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Settings
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
-gzip -9nf README AUTHORS LICENSE
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
