@@ -1,11 +1,11 @@
 Summary:	UNIX Joystick Wrapper Library and calibrator
 Summary(pl):	Biblioteka do obs³ugi joysticka pod UNIX-em
 Name:		libjsw
-Version:	1.5.0
-Release:	3
+Version:	1.5.2
+Release:	1
 License:	GPL-like
 Group:		Libraries
-Source0:	ftp://wolfpack.twu.net/users/wolfpack/libjsw-1.5.0.tar.bz2
+Source0:	ftp://wolfpack.twu.net/users/wolfpack/%{name}-%{version}.tar.bz2
 Source1:	jscalibrator.desktop
 Source2:	jscalibrator.png
 Patch0:		%{name}-intbool.patch
@@ -54,7 +54,7 @@ Kalibrator joysticka do u¿ywania z libjsw.
 
 %prep
 %setup -q
-%patch0 -p0
+%patch0 -p1
 %patch1 -p1
 
 %build

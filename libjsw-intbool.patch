@@ -1,11 +1,11 @@
---- include/xsw_ctype.h~	Mon Nov  5 23:55:11 2001
-+++ include/xsw_ctype.h	Sat Feb  1 15:51:17 2003
-@@ -6,7 +6,7 @@
+--- libjsw-1.5.2/include/xsw_ctype.h.orig	2003-04-30 23:49:39.000000000 +0200
++++ libjsw-1.5.2/include/xsw_ctype.h	2003-05-10 01:01:08.000000000 +0200
+@@ -1,7 +1,7 @@
+ // xsw_ctype.h
+ // This is intended as a prototype for files using the global/ctype.cpp file.
  
- #ifndef isblank
- //extern bool isblank(char c);
--extern bool isblank(int c);
-+extern int isblank(int c);
- #endif
+-#if !defined(__FreeBSD__) && !defined(__NetBSD__)
++#if !defined(__FreeBSD__) && !defined(__NetBSD__) && !defined(linux)
+ # if defined(__cplusplus) || defined(c_plusplus)
  
- #else
+ /* Most systems should have this defined.
