@@ -1,5 +1,5 @@
---- libjsw-1.5.4/jscalibrator/Makefile.orig	2004-04-18 01:34:03.000000000 +0200
-+++ libjsw-1.5.4/jscalibrator/Makefile	2004-04-20 00:44:18.074468720 +0200
+--- libjsw-1.5.6/jscalibrator/Makefile.orig	2006-03-31 08:28:01.000000000 +0200
++++ libjsw-1.5.6/jscalibrator/Makefile	2006-04-23 18:55:57.353808750 +0200
 @@ -85,7 +85,7 @@
  #   Each argument is of the format -L<dir> where <dir> is the full
  #   path to the directory.
@@ -13,19 +13,19 @@
  
  modules: $(OBJ_C) $(OBJ_CPP)
  	@echo  -n "Linking modules..."
--	@$(CPP) $(OBJ_C) $(OBJ_CPP) -o $(BIN) $(LIBS) $(LIB_DIRS)
+-	@$(CC) $(OBJ_C) $(OBJ_CPP) -o $(BIN) $(LIBS) $(LIB_DIRS)
 +	@$(CPP) $(OBJ_C) $(OBJ_CPP) -o $(BIN) $(LIB_DIRS) $(LIBS)
  	@echo -n "   "
  	@-$(LS) $(LSFLAGS) $(BIN)
  
---- libjsw-1.5.4/libjsw/Makefile.orig	2004-04-18 01:34:03.000000000 +0200
-+++ libjsw-1.5.4/libjsw/Makefile	2004-04-20 00:44:51.850334008 +0200
-@@ -97,7 +97,7 @@
+--- libjsw-1.5.6/libjsw/Makefile.orig	2006-03-31 08:28:00.000000000 +0200
++++ libjsw-1.5.6/libjsw/Makefile	2006-04-23 19:04:41.278552000 +0200
+@@ -96,7 +96,7 @@
  
  modules: $(OBJ_C) $(OBJ_CPP)
  	@echo  -n "Linking modules..."
--	@$(CPP) $(OBJ_C) $(OBJ_CPP) -o $(LIB) $(LIBS) $(LIB_DIRS)
-+	@$(CPP) $(OBJ_C) $(OBJ_CPP) -o $(LIB) $(LIB_DIRS) $(LIBS) -Wl,-soname=$(LIBPFX).so.1.5
+-	@$(CC) $(OBJ_C) $(OBJ_CPP) -Wl,-soname=$(LIB) -shared -o $(LIB) $(LIBS) $(LIB_DIRS)
++	@$(CPP) $(OBJ_C) $(OBJ_CPP) -Wl,-soname=$(LIB) -shared -o $(LIB) $(LIB_DIRS) $(LIBS)
  	@echo -n "   "
- 	@-$(LS) $(LSFLAGS) $(LIB)
- 
+ 	@$(RM) $(RMFLAGS) $(LIBPFX).so
+ 	@$(LINK) -s $(LIB) $(LIBPFX).so
