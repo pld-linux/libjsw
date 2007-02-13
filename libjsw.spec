@@ -1,5 +1,5 @@
 Summary:	UNIX Joystick Wrapper Library and calibrator
-Summary(pl.UTF-8):   Biblioteka do obsługi joysticka pod UNIX-em
+Summary(pl.UTF-8):	Biblioteka do obsługi joysticka pod UNIX-em
 Name:		libjsw
 Version:	1.5.6
 Release:	1
@@ -31,7 +31,7 @@ pliku .joystick w katalogu domowym użytkownika.
 
 %package devel
 Summary:	libjsw development package
-Summary(pl.UTF-8):   Pliki dla programistów libjsw
+Summary(pl.UTF-8):	Pliki dla programistów libjsw
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -43,7 +43,7 @@ Pliki dla programistów używających libjsw.
 
 %package -n jscalibrator
 Summary:	Joystick calibrator
-Summary(pl.UTF-8):   Kalibrator joysticka
+Summary(pl.UTF-8):	Kalibrator joysticka
 Group:		X11/Applications/Games
 Requires:	%{name} = %{version}-%{release}
 
