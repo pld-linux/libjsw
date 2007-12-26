@@ -1,10 +1,9 @@
 [Desktop Entry]
-Encoding=UTF-8
 Name=Joystick Calibrator
 Name[pl]=Kalibrator joysticka
 Comment=Joystick Calibrator
 Comment[pl]=Kalibrator joysticka
-Icon=jscalibrator.png
+Icon=jscalibrator
 Exec=jscalibrator
 Terminal=false
 Type=Application
