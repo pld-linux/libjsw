@@ -1,17 +1,17 @@
 Summary:	UNIX Joystick Wrapper Library and calibrator
 Summary(pl.UTF-8):	Biblioteka do obsługi joysticka pod Uniksem
 Name:		libjsw
-Version:	1.5.6
-Release:	2
+Version:	1.5.8
+Release:	1
 License:	GPL-like
 Group:		Libraries
-Source0:	ftp://wolfpack.twu.net/users/wolfpack/%{name}-%{version}.tar.bz2
-# Source0-md5:	d75948b7ff464982cc6e1de4c94008be
+Source0:	http://wolfsinger.com/~wolfpack/packages/%{name}-%{version}.tar.bz2
+# Source0-md5:	1158f770c3aa82587fd70e6bd3c840df
 Source1:	jscalibrator.desktop
 Source2:	jscalibrator.png
 Patch0:		%{name}-intbool.patch
 Patch1:		%{name}-link.patch
-URL:		http://wolfpack.twu.net/libjsw/
+URL:		http://freecode.com/projects/libjsw
 BuildRequires:	gtk+-devel
 BuildRequires:	libstdc++-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -90,6 +90,9 @@ install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 install jswdemos/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
+# soname is .so.%{version}
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libjsw.so.1
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -98,20 +101,21 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README AUTHORS LICENSE
-%attr(755,root,root) %{_libdir}/libjsw.so.*.*
+%doc LICENSE README
+%attr(755,root,root) %{_libdir}/libjsw.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libjsw.so
-%{_includedir}/*
-%{_mandir}/man3/*
+%{_includedir}/jsw.h
+%{_mandir}/man3/JS*.3*
 %{_examplesdir}/%{name}-%{version}
 
 %files -n jscalibrator
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/jscalibrator
 %{_datadir}/libjsw
-%{_mandir}/man1/*
-%{_pixmapsdir}/*.png
-%{_desktopdir}/*.desktop
+%{_mandir}/man1/jscalibrator.1*
+%{_desktopdir}/jscalibrator.desktop
+%{_pixmapsdir}/jscalibrator.png
+%{_pixmapsdir}/jscalibrator.xpm
