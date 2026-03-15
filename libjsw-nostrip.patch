@@ -1,0 +1,28 @@
+--- libjsw-1.5.8/libjsw/Makefile.orig	2008-08-14 10:21:54.000000000 +0200
++++ libjsw-1.5.8/libjsw/Makefile	2026-03-15 12:00:00.000000000 +0100
+@@ -118,9 +118,9 @@
+ #
+
+ INSTALL      = install
+-INSTBINFLAGS = -m 0755 -s
++INSTBINFLAGS = -m 0755
+ INSTUIDFLAGS = -m 4755
+-INSTLIBFLAGS = -m 0755 -s
++INSTLIBFLAGS = -m 0755
+ INSTINCFLAGS = -m 0644
+ INSTMANFLAGS = -m 0644
+ INSTCFGFLAGS = -m 0644
+--- libjsw-1.5.8/jscalibrator/Makefile.install.UNIX.orig	2008-08-14 10:21:54.000000000 +0200
++++ libjsw-1.5.8/jscalibrator/Makefile.install.UNIX	2026-03-15 12:00:00.000000000 +0100
+@@ -12,9 +12,9 @@
+ #
+
+ INSTALL      = install
+-INSTBINFLAGS = -m 0755 -s
++INSTBINFLAGS = -m 0755
+ INSTUIDFLAGS = -m 4755
+-INSTLIBFLAGS = -m 0755 -s
++INSTLIBFLAGS = -m 0755
+ INSTINCFLAGS = -m 0444
+ INSTMANFLAGS = -m 0444
+ INSTCFGFLAGS = -m 0644

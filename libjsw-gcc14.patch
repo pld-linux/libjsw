@@ -1,0 +1,55 @@
+--- libjsw-1.5.8/jscalibrator/jcwidgets.c.orig	2008-08-14 10:21:54.000000000 +0200
++++ libjsw-1.5.8/jscalibrator/jcwidgets.c	2026-03-15 02:06:03.559904684 +0100
+@@ -1,5 +1,6 @@
+ #include <jsw.h>
+ #include <gtk/gtk.h>
++#include <string.h>
+
+ #include "guiutils.h"
+ #include "jc.h"
+@@ -1100,31 +1101,31 @@
+ 	static GtkItemFactoryEntry menu_items[] = {
+
+ { "/_Calibration",          NULL,         NULL,     JC_CMD_NONE, "<Branch>" },
+-{ "/Calibration/_Open",     "<control>O", JCMenuCB, JC_CMD_OPEN_CALIB, NULL },
++{ "/Calibration/_Open",     "<control>O", (GtkItemFactoryCallback)JCMenuCB, JC_CMD_OPEN_CALIB, NULL },
+ { "/Calibration/sep1",      NULL,         NULL,     JC_CMD_NONE, "<Separator>" },
+-{ "/Calibration/_Save",     "<control>S", JCMenuCB, JC_CMD_SAVE_CALIB, NULL },
+-{ "/Calibration/Save _As",  "<control>A", JCMenuCB, JC_CMD_SAVEAS_CALIB, NULL },
++{ "/Calibration/_Save",     "<control>S", (GtkItemFactoryCallback)JCMenuCB, JC_CMD_SAVE_CALIB, NULL },
++{ "/Calibration/Save _As",  "<control>A", (GtkItemFactoryCallback)JCMenuCB, JC_CMD_SAVEAS_CALIB, NULL },
+ { "/Calibration/sep2",      NULL,         NULL,     JC_CMD_NONE, "<Separator>" },
+-{ "/Calibration/Clean Up",  NULL,         JCMenuCB, JC_CMD_CLEANUP_CALIB, NULL },
++{ "/Calibration/Clean Up",  NULL,         (GtkItemFactoryCallback)JCMenuCB, JC_CMD_CLEANUP_CALIB, NULL },
+ { "/Calibration/sep3",      NULL,         NULL,     JC_CMD_NONE, "<Separator>" },
+-{ "/Calibration/E_xit",     "<control>X", JCMenuCB, JC_CMD_EXIT, NULL },
++{ "/Calibration/E_xit",     "<control>X", (GtkItemFactoryCallback)JCMenuCB, JC_CMD_EXIT, NULL },
+ { "/_Joystick",             NULL,         NULL,     JC_CMD_NONE, "<Branch>" },
+-{ "/Joystick/_Refresh",     "<control>R", JCMenuCB, JC_CMD_REFRESH, NULL },
++{ "/Joystick/_Refresh",     "<control>R", (GtkItemFactoryCallback)JCMenuCB, JC_CMD_REFRESH, NULL },
+ { "/Joystick/sep1",         NULL,         NULL,     JC_CMD_NONE, "<Separator>" },
+-{ "/Joystick/R_eopen",      "<control>E", JCMenuCB, JC_CMD_REOPEN_DEVICE, NULL },
+-{ "/Joystick/_Close",       "<control>C", JCMenuCB, JC_CMD_CLOSE_DEVICE, NULL },
++{ "/Joystick/R_eopen",      "<control>E", (GtkItemFactoryCallback)JCMenuCB, JC_CMD_REOPEN_DEVICE, NULL },
++{ "/Joystick/_Close",       "<control>C", (GtkItemFactoryCallback)JCMenuCB, JC_CMD_CLOSE_DEVICE, NULL },
+ { "/Joystick/sep2",         NULL,         NULL,     JC_CMD_NONE, "<Separator>" },
+-{ "/Joystick/Properties...", NULL,        JCMenuCB, JC_CMD_JOYSTICK_PROPERTIES, NULL },
++{ "/Joystick/Properties...", NULL,        (GtkItemFactoryCallback)JCMenuCB, JC_CMD_JOYSTICK_PROPERTIES, NULL },
+ { "/_View",                 NULL,         NULL,     JC_CMD_NONE, "<Branch>" },
+-{ "/View/Re_presentative",  "<control>P", JCMenuCB, JC_CMD_LAYOUT_REPRESENTATIVE, NULL },
+-{ "/View/_Logical",         "<control>L", JCMenuCB, JC_CMD_LAYOUT_LOGICAL, NULL },
++{ "/View/Re_presentative",  "<control>P", (GtkItemFactoryCallback)JCMenuCB, JC_CMD_LAYOUT_REPRESENTATIVE, NULL },
++{ "/View/_Logical",         "<control>L", (GtkItemFactoryCallback)JCMenuCB, JC_CMD_LAYOUT_LOGICAL, NULL },
+ { "/_Help",                 NULL,         NULL,     JC_CMD_NONE, "<LastBranch>" },
+-{ "/Help/Index",            NULL,         JCMenuCB, JC_CMD_HELP_INDEX, NULL },
++{ "/Help/Index",            NULL,         (GtkItemFactoryCallback)JCMenuCB, JC_CMD_HELP_INDEX, NULL },
+ { "/Help/sep1",             NULL,         NULL,     JC_CMD_NONE, "<Separator>" },
+-{ "/Help/Introduction",     NULL,         JCMenuCB, JC_CMD_HELP_INTRODUCTION, NULL },
+-{ "/Help/How To Calibrate", NULL,         JCMenuCB, JC_CMD_HELP_HOW_TO_CALIBRATE, NULL },
++{ "/Help/Introduction",     NULL,         (GtkItemFactoryCallback)JCMenuCB, JC_CMD_HELP_INTRODUCTION, NULL },
++{ "/Help/How To Calibrate", NULL,         (GtkItemFactoryCallback)JCMenuCB, JC_CMD_HELP_HOW_TO_CALIBRATE, NULL },
+ { "/Help/sep2",             NULL,         NULL,     JC_CMD_NONE, "<Separator>" },
+-{ "/Help/About",            NULL,         JCMenuCB, JC_CMD_HELP_ABOUT, NULL }
++{ "/Help/About",            NULL,         (GtkItemFactoryCallback)JCMenuCB, JC_CMD_HELP_ABOUT, NULL }
+
+ 	};
